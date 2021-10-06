@@ -1,0 +1,21 @@
+.modal__overlay {
+  background-color: rgba(0, 0, 0, 0.85);
+  position: fixed;
+  inset: 0 0 0 0;
+  z-index: 5000;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.modal__content {
+  color: #efeff1;
+  display: flex;
+  flex-grow: 0;
+  justify-content: center;
+  outline: none;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}

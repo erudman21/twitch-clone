@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a,
+body,
+html,
+nav,
+ol,
+ul,
+p,
+section,
+div {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+button {
+  border: none;
+  background: none;
+  border-radius: 0;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+}
+
+html,
+body {
+  line-height: 1.5;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  position: relative;
+  font-family: -apple-system, Helvetica Neue, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #0e0e10;
+  color: white;
+  font-size: 1.3rem;
+  overflow: hidden;
+}
+
+input[type="search"] {
+  appearance: auto;
+  box-sizing: border-box;
+  padding: 1px 2px;
+}
+
+input {
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: auto;
+  background-color: rgb(59, 59, 59);
+  cursor: text;
+  margin: 0em;
+  font: 400 13.333px Arial;
+  padding: 1px 2px;
+  border-width: 2px;
+  border-style: inset;
+  border-color: rgb(133, 133, 133);
+  border-image: initial;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+option {
+  font-weight: normal;
+  display: block;
+  white-space: nowrap;
+  min-height: 1.2em;
+  padding: 0px 2px 1px;
+}
+
+option:disabled {
+  color: rgb(170, 170, 170);
+}
+
+select {
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: auto;
+  box-sizing: border-box;
+  align-items: center;
+  white-space: pre;
+  cursor: default;
+  margin: 0em;
+  font: 400 13.3333px Arial;
+  border-radius: 0px;
+  border-width: 1px;
+  border-style: solid;
+  border-image: initial;
+}
+
+nav {
+  z-index: 1000;
+  display: block;
+  color: white;
+}
+
+#__next {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  position: relative;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 1px 1px transparent;
+  border: solid 1px transparent;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  height: 10vh;
+  width: 0.6rem;
+  background: #1f1f23;
+  border-radius: 10px;
+  border: solid 1px transparent;
+  opacity: 0.7;
+  box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.25);
+}
+
+::-webkit-scrollbar-thumb:hover {
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+@layer utilities {
+  .nav-bar-indicator div {
+    visibility: hidden;
+  }
+}
+
+@layer components {
+  .icon-button-default {
+    @apply w-12 h-12 items-center inline-flex justify-center select-none rounded-md hover:bg-nav-dots-background-hover;
+  }
+  .text-area-input-default {
+    @apply text-text-input border-nav-dots-background-hover border-2 border-solid bg-clip-padding bg-nav-dots-background-hover;
+  }
+
+  .button-default {
+    @apply capitalize h-default-button-height rounded-left-nav-bar overflow-hidden items-center justify-center align-middle;
+  }
+
+  .button-default-enabled {
+    @apply bg-button-primary-default hover:bg-button-primary-hover;
+  }
+
+  .button-default-disabled {
+    @apply bg-search-button text-search-button-disabled cursor-not-allowed;
+  }
+
+  .tooltip {
+    @apply invisible absolute rounded-md shadow-md px-2 text-gray-900 bg-gray-100;
+  }
+
+  .has-tooltip:hover .tooltip {
+    @apply visible z-50;
+  }
+
+  @variants hover {
+    .text-area-input-default {
+      @apply hover:border-search-box-hover;
+    }
+  }
+
+  @variants focus {
+    .text-area-input-default {
+      @apply focus:outline-none focus:bg-black focus:border-button-hover;
+    }
+  }
+}
