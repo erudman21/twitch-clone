@@ -13,7 +13,10 @@ import { createConnection } from "typeorm";
 import { COOKIE_NAME, __prod__ } from "./constants";
 import { FollowResolver } from "./resolvers/follow";
 import { UserResolver } from "./resolvers/user";
+import { nmsConfig } from "./stream/nmsConfig";
 import { createIOServer } from "./webSocketServer";
+// @ts-ignore
+import NodeMediaServer from "node-media-server";
 
 const port = 4000;
 
@@ -64,6 +67,9 @@ const main = async () => {
 
   await apolloServer.start();
   apolloServer.applyMiddleware({ app, cors: false });
+
+  const nms = new NodeMediaServer(nmsConfig);
+  nms.run();
 
   createIOServer(httpServer, corsOptions, redisClient, sessionMiddleware);
 

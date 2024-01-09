@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "dev": "tsc && concurrently \"tsc -w\" \"nodemon dist/backend/src/index.js\" \"node dist/backend/src/stream/mediaServer.js\"",
+    "dev": "nodemon src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "m:c": "typeorm migration:create"
   },
@@ -24,6 +24,7 @@
     "@types/uuid": "^8.3.1",
     "concurrently": "^6.2.0",
     "nodemon": "^2.0.12",
+    "ts-node": "^10.2.1",
     "typescript": "^4.3.5"
   },
   "dependencies": {

@@ -1,3 +1,3 @@
 # twitch-clone
 
-** in progress **
+Testing out how streaming works

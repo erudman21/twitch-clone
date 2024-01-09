@@ -1,6 +1,4 @@
-import NodeMediaServer from "node-media-server";
-
-const config = {
+export const nmsConfig = {
   rtmp: {
     port: 1935,
     chunk_size: 60000,
@@ -31,7 +29,3 @@ const config = {
     ],
   },
 };
-
-const nms = new NodeMediaServer(config);
-
-nms.run();
